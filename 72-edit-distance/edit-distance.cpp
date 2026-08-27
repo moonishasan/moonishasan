@@ -5,11 +5,12 @@ public:
         int m = word2.size();
 
         vector<vector<int>> dp(n+1, vector<int> (m+1, 0));
+        // dp[i][j] -> min no. of operations to convert word1 of size i into word2 of size j
 
-        for(int j = 0; j < m+1; j++){  // insert
+        for(int j = 0; j < m+1; j++){   // 0th row
             dp[0][j] = j;
         }
-        for(int i = 0; i < n+1; i++){  // delete 
+        for(int i = 0; i < n+1; i++){  // 0th col
             dp[i][0] = i;
         }
 
