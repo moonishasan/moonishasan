@@ -6,6 +6,7 @@ public:
         for(int i = n-1; i >= 0; i--){
             s2 += s[i];
         }
+        
         vector<vector<int>> dp(n+1, vector<int> (n+1, 0));
         // dp[i][j] -> LPS when s is of size i and s2 is of j
 
