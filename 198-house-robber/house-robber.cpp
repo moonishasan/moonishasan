@@ -5,13 +5,12 @@ public:
         if(n == 1){
             return nums[0];
         }
-        if(n == 2){
-            return max(nums[0], nums[1]);
-        }
-        vector<int> dp(n+1, 0);  // dp[i] => max money robbed till house i
+        vector<int> dp(n+1);
+        // dp[i] -> max money that can be robbed from the first i houses without alerting the police
+        dp[0] = 0;
         dp[1] = nums[0];
         dp[2] = max(nums[0], nums[1]);
-        for(int i = 3; i <= n; i++){
+        for(int i = 3; i < n+1; i++){
             dp[i] = max(dp[i-1], nums[i-1] + dp[i-2]);
         }
         return dp[n];
