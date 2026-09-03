@@ -1,11 +1,10 @@
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
-        unordered_set<int> s(nums.begin(), nums.end()); // to remove any duplicates
+        unordered_set<int> s(nums.begin(), nums.end());  // to remove duplicates
         vector<int> nums2(s.begin(), s.end());
-        sort(nums2.begin(), nums2.end());  // sort in ascending order
-        // now check LCS in nums and nums2 -> LIS in nums
-
+        sort(nums2.begin(), nums2.end());  
+        
         int n = nums.size();
         int m = nums2.size();
 
@@ -16,7 +15,7 @@ public:
                     dp[i][j] = 1 + dp[i-1][j-1];
                 }
                 else{
-                    dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+                    dp[i][j] = max(dp[i][j-1], dp[i-1][j]);
                 }
             }
         }
