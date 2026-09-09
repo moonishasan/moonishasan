@@ -1,15 +1,15 @@
 class Solution {
 public:
     int maxSubarraySumCircular(vector<int>& nums) {
-        int max_sum = 0;
         int tot_sum = 0;
         for(int i : nums){
             tot_sum += i;
         }
-        int ans1 = INT_MIN;
         // calculate max contiguous subarray sum
-        for(int i = 0; i < nums.size(); i++){
-            max_sum += nums[i];
+        int ans1 = INT_MIN;
+        int max_sum = 0;
+        for(int i : nums){
+            max_sum += i;
             ans1 = max(ans1, max_sum);
             if(max_sum < 0){
                 max_sum = 0;
@@ -18,8 +18,8 @@ public:
         // calculate min contiguous subarray sum
         int ans2 = INT_MAX;
         int min_sum = 0;
-        for(int i = 0; i < nums.size(); i++){
-            min_sum += nums[i];
+        for(int i : nums){
+            min_sum += i;
             ans2 = min(ans2, min_sum);
             if(min_sum > 0){
                 min_sum = 0;
