@@ -26,11 +26,15 @@ public:
         q.push(root);
         while(!q.empty()){
             int size = q.size();
-            Node* curr;
             for(int i = 0; i < size; i++){
-                curr = q.front();
+                Node* curr = q.front();
                 q.pop();
-                curr->next = q.front();
+                if(i < size-1){
+                    curr->next = q.front();
+                }
+                else{
+                    curr->next = nullptr;
+                }
                 if(curr->left != nullptr){
                     q.push(curr->left);
                 }
@@ -38,7 +42,6 @@ public:
                     q.push(curr->right);
                 }
             }
-            curr->next = nullptr;
         }
         return root;
     }
