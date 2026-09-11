@@ -5,8 +5,7 @@ public:
         for(int n : nums){
             freq[n]++;
         }
-        int middle = nums[nums.size()/2];
-        if(freq[middle] == 1){
+        if(freq[nums[nums.size()/2]] == 1){
             return true;
         }
         return false;
