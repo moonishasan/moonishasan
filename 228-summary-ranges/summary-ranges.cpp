@@ -12,11 +12,7 @@ public:
                 continue;
             }
             if(nums[i] == 1 + nums[i-1] && i == nums.size()-1){
-                   if(range[0] == nums[i]){
-                    ans.push_back(to_string(range[0]));
-                    range.pop_back();
-                }
-                else if(range[0] != nums[i]){
+                if(range[0] != nums[i]){
                     ans.push_back(to_string(range[0]) + "->" + to_string(nums[i]));
                     range.pop_back();
                 }
@@ -33,10 +29,8 @@ public:
                 range.push_back(nums[i]);
             }
         }
-        if(range.size() != 0){
-            if(range.size() == 1){
-                ans.push_back(to_string(range[0]));
-            }
+        if(range.size() == 1){
+            ans.push_back(to_string(range[0]));
         }
         return ans;
     }
