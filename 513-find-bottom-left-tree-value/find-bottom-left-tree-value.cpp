@@ -32,6 +32,7 @@ public:
             for(int i = 0; i < size; i++){
                 TreeNode* curr = q.front();
                 q.pop();
+                // this ensures i am at the last level
                 if(level == ht){
                     return curr->val;
                 }
