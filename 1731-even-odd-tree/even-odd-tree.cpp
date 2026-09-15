@@ -41,7 +41,7 @@ public:
                     }
                 }
             }
-            else if(level_no % 2 != 0){     // level is odd
+            else{     // level is odd
                 for(int i = 0; i < level.size(); i++){
                     if(level[i] % 2 != 0){
                         return false;
