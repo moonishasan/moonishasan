@@ -3,9 +3,9 @@ public:
     int reverseDegree(string s) {
         int ans = 0;
         int i = 1;
-        // 26 + 'a' - ch
         for(char c : s){
-            ans += (26 + 'a' - c) * i;
+            int prod = i * (26-(c-'a'));
+            ans += prod;
             i++;
         }
         return ans;
