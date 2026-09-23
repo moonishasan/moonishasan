@@ -10,20 +10,20 @@ public:
         if(target < 0){
             return -1;
         }
+        int subSum = 0;
         int left = 0;
-        int sub_sum = 0;
-        int maxLen = INT_MIN;
+        int maxlen = -1;
         for(int right = 0; right < nums.size(); right++){
-            sub_sum += nums[right];
-            while(sub_sum > target){
-                sub_sum -= nums[left];
+            subSum += nums[right];
+            while(subSum > target){
+                subSum -= nums[left];
                 left++;
             }
-            if(sub_sum == target){
+            if(subSum == target){
                 int len = right - left + 1;
-                maxLen = max(maxLen, len);
+                maxlen = max(maxlen, len);
             }
         }
-        return maxLen == INT_MIN ? -1 : nums.size()-maxLen;
+        return maxlen == -1 ? -1 : nums.size()-maxlen;
     }
 };
