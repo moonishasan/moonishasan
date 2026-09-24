@@ -14,7 +14,10 @@ public:
             }
         }  
         for(int i = 0; i < nums2.size(); i++){
-            if(s1.find(nums2[i]) != s1.end()){
+            // if(s1.find(nums2[i]) != s1.end()){
+            //     ans2++;
+            // }
+            if(s1.count(nums2[i])){
                 ans2++;
             }
         }
