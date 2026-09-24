@@ -6,9 +6,12 @@ public:
         unordered_set<int> s1(nums1.begin(), nums1.end());
         unordered_set<int> s2(nums2.begin(), nums2.end());
         for(int i = 0; i < nums1.size(); i++){
-           if(s2.find(nums1[i]) != s2.end()){
+        //    if(s2.find(nums1[i]) != s2.end()){
+        //         ans1++;
+        //    } 
+            if(s2.count(nums1[i])){
                 ans1++;
-           } 
+            }
         }  
         for(int i = 0; i < nums2.size(); i++){
             if(s1.find(nums2[i]) != s1.end()){
