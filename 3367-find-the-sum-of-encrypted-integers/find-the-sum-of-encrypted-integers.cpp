@@ -1,6 +1,9 @@
 class Solution {
 public:
     int encrypt(int x){
+        if(x >= 0 && x <= 9){
+            return x;
+        }
         vector<int> digits;
         while(x){
             int d = x % 10;
