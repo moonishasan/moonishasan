@@ -3,6 +3,7 @@ public:
     void solve(int n, int open, int close, string curr, vector<string>& ans){
         if(curr.size() == 2*n){
             ans.push_back(curr);
+            return;
         }
         // put open bracket
         if(open < n){
