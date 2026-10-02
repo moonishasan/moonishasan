@@ -1,17 +1,17 @@
 class Solution {
 public:
-    void solve(int n, int open, int close, string current, vector<string>& ans){
-        if(current.size() == 2*n){
-            ans.push_back(current);
+    void solve(int n, int open, int close, string curr, vector<string>& ans){
+        if(curr.size() == 2*n){
+            ans.push_back(curr);
         }
-        // put opening bracket
+        // put open bracket
         if(open < n){
-            solve(n, open + 1, close, current + '(', ans);
+            solve(n, open+1, close, curr + '(', ans);
         }
-        // put closing bracket
+        // put close bracket
         if(close < open){
-            solve(n, open, close + 1, current + ')', ans);
-        }
+            solve(n, open, close+1, curr + ')', ans);
+        }    
     }
     vector<string> generateParenthesis(int n) {
         vector<string> ans;
