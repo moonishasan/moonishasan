@@ -10,13 +10,11 @@ public:
             _new.push_back(c+1);
         }
         s.append(_new);
-
         if(s.size() >= k){
             return s[k-1];
         }
         else{
             return kthCharacter(k);
-        }
- 
+        } 
     }
 };
