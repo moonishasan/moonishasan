@@ -19,6 +19,7 @@ public:
                     else{
                         ans[i] = to_string(j+1);
                     }
+                    break;
                 }
             }
         }
