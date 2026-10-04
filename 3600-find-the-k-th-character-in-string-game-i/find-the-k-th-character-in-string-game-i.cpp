@@ -6,6 +6,7 @@ public:
         for(char c : s){
             if(c == 'z'){
                 _new.push_back('a');
+                continue;
             }
             _new.push_back(c+1);
         }
