@@ -4,10 +4,10 @@ public:
         int ans = 0;
         int maxi = INT_MIN;
         for(int n : nums){
-            maxi = max(maxi, n);
+            maxi = max(n, maxi);
         }
         for(int n : nums){
-            ans += (maxi - n);
+            ans += (maxi-n);
         }
         return ans;
     }
